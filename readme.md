@@ -49,4 +49,34 @@ $ ls *.txt | xargs rm
 $ alias calmagic=`cal -A 1 -B 1`
 ```
 
-## 
+## Common
+
+```shell
+ls
+cd
+mkdir
+rm
+```
+
+## whildcard
+
+```shell
+$ ls *
+$ ls Do*
+$ ls *.txt
+$ ls ??.txt # only match aa.txt bb.txt
+$ ls [12345].txt # regex, either of 12345
+$ ls [0-9][a-z].txt # regex, either of 0-9 and a-z e.g. 4f.txt
+$ touch {a,b,c}{2011..2018}.txt
+```
+
+## find
+
+```shell
+$ find . -maxdepth 5 -type f|d -name "*.txt"
+$ find -iname "*.TXT"
+$ find / -type f -size +100k -size -5M | wc -l # 100k~5M
+$ find / -type f -size -100k -o -size +5M | wc -l # 100k- or 5M+
+$ sudo find / -type f -size +100k -size -5M -exec mv {} ./ttt \;
+$ sudo find / -type f -size +100k -size -5M -ok mv {} ./ttt \; # interactive mode
+```
