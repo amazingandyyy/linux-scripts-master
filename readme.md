@@ -80,3 +80,41 @@ $ find / -type f -size -100k -o -size +5M | wc -l # 100k- or 5M+
 $ sudo find / -type f -size +100k -size -5M -exec mv {} ./ttt \;
 $ sudo find / -type f -size +100k -size -5M -ok mv {} ./ttt \; # interactive mode
 ```
+
+## reading files
+
+### cat - concatenate - tac
+
+```shell
+$ cat file[1-5].txt > all.txt
+$ cat file[1-5].txt | tac > reversed-vertically.txt
+$ cat file[1-5].txt | rev > reversed-line.txt
+```
+
+### less
+
+```shell
+$ less long.txt
+$ cat long.txt | less
+$ cat long.txt | head -n 5
+$ cat long.txt | tail -n 2
+```
+
+## sort
+
+```shell
+$ sort rand.txt
+$ sort rand.txt | tac
+$ sort -r rand.txt > reversed.txt
+$ sort -n rand-number.txt
+$ sort -u rand-number-unique.txt
+$ ls -l /private/etc | head -n 20 | sort -k 5n # sorted by column
+$ ls -l /private/etc | head -n 20 | sort -k 5hr # sorted by column, human readible
+$ ls -l /private/etc | head -n 20 | sort -k 6Mr # sorted by column, by month data
+```
+
+## grep
+
+```shell
+
+```
