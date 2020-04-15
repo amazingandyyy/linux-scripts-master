@@ -116,5 +116,30 @@ $ ls -l /private/etc | head -n 20 | sort -k 6Mr # sorted by column, by month dat
 ## grep
 
 ```shell
+$ grep -c andy gadsby.txt
+$ grep -v none gadsby.txt
+$ grep -i gadsby gadsby.txt
+```
 
+## tarball ,compress
+
+```shell
+# make a tarball
+$ tar -cvf ourarchive.tar hello/file[1-5] # c: archive v: verbose f: files
+$ tar -tf ourarchive.tar # t: test file, f: files
+# compression
+$ gzip ourarchive.tar
+$ gunzip ourarchive.tar # then tar -tf
+$ bzip2 ourarchive.tar  # compress more
+# or
+$ zip ourthing.zip hello/file[1-5]
+$ unzip ourthing.zip
+
+# one step, tarball and compress
+$ tar -cvzf ourarchive.tar.gz hello/file[1-5] # z: use gzip to compress files
+$ tar -cvjf ourarchive.tar.bz2 hello/file[1-5] # j: use bzip2 to compress files
+
+# one step, decompress and tarball
+$ tar -xvzf ourarchive.tar.gz      # x: extract
+$ tar -xvjf ourarchive.tar.bz2
 ```
