@@ -143,3 +143,26 @@ $ tar -cvjf ourarchive.tar.bz2 hello/file[1-5] # j: use bzip2 to compress files
 $ tar -xvzf ourarchive.tar.gz      # x: extract
 $ tar -xvjf ourarchive.tar.bz2
 ```
+
+## Create bash tool
+
+```shell
+#!/usr/bin/bash
+# add shebang to the first line
+# chmod +x ./file.sh
+# mv hello.sh /bin/hello
+# add PATH="$PATH:$HOME/bin" to .bashrc or .zshrc
+```
+
+## cron
+
+[crontab.guru](https://crontab.guru/)
+
+```shell
+$ crontab -e
+# edit the crontab file: 6 columns
+m   h   dom   mon    dow   command
+*   *   *     *      *      echo hello
+*/15   *   *     *      *      echo every 15 minutes > ~/Desktop/every
+11  23  10    DEC    SAT     echo hellooo
+```
